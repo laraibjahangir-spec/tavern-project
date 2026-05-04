@@ -1,0 +1,14 @@
+test_name: get all posts
+
+includes:
+  - !include ../config/config.yaml
+
+stages:
+  - name: fetch all posts
+    request:
+      url: "{base_URL}/posts"
+      method: GET
+    response:
+      status_code: 200
+      verify_response_with:
+        - function: utils.validator:validate_response

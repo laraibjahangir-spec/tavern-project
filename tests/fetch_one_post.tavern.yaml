@@ -1,0 +1,22 @@
+test_name: Verify that user can fetch one posts
+
+includes:
+  - !include ../config/config.yaml
+
+stages:
+  - name: fetch a post
+    request:
+      url: "{base_URL}/posts/{post_no}"
+      method: GET
+    response:
+      status_code: 200
+      json:
+        id: !int "{post_no}"
+        userId: !anyint
+        title: !anystr
+        body: !anystr
+
+
+
+
+
