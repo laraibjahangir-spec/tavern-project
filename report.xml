@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="1.571" timestamp="2026-05-04T20:40:31.461810+05:00" hostname="laraibs-MacBook-Air.local"><testcase classname="tests.add_a_post.tavern.yaml" name="User can add a post" time="1.137" /><testcase classname="tests.fetch_all_posts.tavern.yaml" name="get all posts" time="0.004"><failure message="Format variables:&#10;  base_URL = 'https://jsonplaceholder.typicode.com'&#10;&#10;Source test stage (line 6):&#10;  - name: fetch all posts&#10;    request:&#10;      url: &quot;{base_URL}/posts&quot;&#10;      method: GET&#10;    response:&#10;      status_code: 200&#10;      verify_response_with:&#10;&#10;Formatted stage:&#10;  name: fetch all posts&#10;  request:&#10;    method: GET&#10;    url: https://jsonplaceholder.typicode.com/posts&#10;  response:&#10;    status_code: 200&#10;    verify_response_with:&#10;    - function: utils.validator:validate_response&#10;&#10;Errors:&#10;E   tavern._core.exceptions.InvalidExtFunctionError: Error importing module utils.validator">Format variables:
+  base_URL = 'https://jsonplaceholder.typicode.com'
+
+Source test stage (line 6):
+  - name: fetch all posts
+    request:
+      url: "{base_URL}/posts"
+      method: GET
+    response:
+      status_code: 200
+      verify_response_with:
+
+Formatted stage:
+  name: fetch all posts
+  request:
+    method: GET
+    url: https://jsonplaceholder.typicode.com/posts
+  response:
+    status_code: 200
+    verify_response_with:
+    - function: utils.validator:validate_response
+
+Errors:
+E   tavern._core.exceptions.InvalidExtFunctionError: Error importing module utils.validator</failure></testcase><testcase classname="tests.fetch_one_post.tavern.yaml" name="Verify that user can fetch one posts" time="0.368" /></testsuite></testsuites>

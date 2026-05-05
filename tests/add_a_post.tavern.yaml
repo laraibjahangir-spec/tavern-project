@@ -1,0 +1,24 @@
+test_name: User can add a post
+
+includes:
+  - !include ../config/config.yaml
+
+stages:
+  - name: add a post
+    request:
+      url: "{base_URL}/posts"
+      method: POST
+      json:
+        title: "{title}"
+        body: "{body}"
+        userId: "1"
+    response:   
+      status_code: 201
+      json:
+        title: "{title}"
+        body: "{body}"
+        userId: "1"
+      save:
+        json:
+          post_id: id
+      strict: false

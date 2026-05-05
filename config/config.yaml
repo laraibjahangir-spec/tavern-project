@@ -1,3 +1,7 @@
 variables:
   base_URL: "https://jsonplaceholder.typicode.com"
   post_no: "2"
+
+  #post data
+  title: "a sunny day"
+  body: "It was a good sunny day.Sun was shining bright"
